@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QueensWrld</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+    <style>
+    .search-group {
+      display: flex;
+      line-height: 28px;
+      align-items: center;
+      position: relative;
+      max-width: 190px;
+    }
+
+    .input {
+      font-family: "Montserrat", sans-serif;
+      width: 100%;
+      height: 45px;
+      padding-left: 2.5rem;
+      box-shadow: 0 0 0 1.5px #2b2c37, 0 0 25px -17px #000;
+      border: 0;
+      border-radius: 12px;
+      background-color: #16171d;
+      outline: none;
+      color: #bdbecb;
+      transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+      cursor: text;
+      z-index: 0;
+      font-size: 12px;
+    }
+
+    .input::placeholder {
+      color: #bdbecb;
+      font-size: 12px;
+    }
+
+    .input:hover {
+      box-shadow: 0 0 0 2.5px #2f303d, 0px 0px 25px -15px #000;
+    }
+
+    .input:active {
+      transform: scale(0.95);
+    }
+
+    .input:focus {
+      box-shadow: 0 0 0 2.5px #2f303d;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 1rem;
+      fill: #bdbecb;
+      width: 1rem;
+      height: 1rem;
+      pointer-events: none;
+      z-index: 1;
+    }
+</style>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <!-- Header -->
+<header id="header" class="bg-gray-800 p-4 flex justify-between items-center">
+    <div class="flex items-center">
+        <button class="mr-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        </button>
+        <a href="index.html"><h1 class="text-2xl font-bold text-purple-400">QueensWrld</h1></a>
+    </div>
+    
+    <!-- New Search Bar -->
+    <div class="search-group">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="search-icon">
+            <g>
+            <path
+                d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
+            ></path>
+            </g>
+        </svg>
+        <input
+            id="query"
+            class="input"
+            type="search"
+            placeholder="Search..."
+            name="searchbar"
+        />
+    </div>
+</header>
+    <!-- Bottom Navigation Header -->
+    <nav class="bg-gray-800 border-t border-b border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-center h-12">
+                <div class="flex items-baseline divide-x divide-gray-600">
+                    <!-- 
+                      Current Page Style: "text-purple-400 border-b-2 border-purple-400"
+                      Default Link Style: "text-gray-300 hover:text-white" 
+                    -->
+                    <a href="#" class="text-gray-300 hover:text-white px-5 py-2 text-sm font-medium" aria-current="page">Live</a>
+                    <a href="#" class="text-gray-300 hover:text-white px-5 py-2 text-sm font-medium">Videos</a>
+                    <a href="#" class="text-gray-300 hover:text-white px-5 py-2 text-sm font-medium">Categories</a>
+                    <a href="#" class="text-gray-300 hover:text-white px-5 py-2 text-sm font-medium">Trending</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="w-full p-4">
+        <div class="relative w-full" style="padding-bottom: 56.25%;"> <!-- 16:9 Aspect Ratio -->
+            <img src="assets/img/754756.gif" alt="QueensWrld" class="absolute top-0 left-0 w-full h-full object-cover rounded-lg"/>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="p-4">
+        <div class="flex items-center mb-6">
+        <h2 class="text-2xl font-bold text-purple-400 whitespace-nowrap pr-4">Recommended for you</h2>
+        <div class="w-full h-px bg-gray-700"></div>
+    </div>
+    
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+            <div class="group">
+                <a href="pretti-paid.html">
+                    <img src="assets/img/6984-613x360.jpg" alt="Pretti Paid" class="rounded-lg">
+                </a>
+                <a href="pretti-paid.html">
+                    <p class="mt-2 text-center text-sm">Pretti Paid</p>
+                </a>
+            </div>
+             <div class="group">
+                <a href="top-tier.html">
+                    <img src="assets/img/p21x-613x360.jpg" alt="Top Tier" class="rounded-lg">
+                </a>
+                <a href="top-tier.html">
+                    <p class="mt-2 text-center text-sm">Top Tier</p>
+                </a>
+            </div>
+             <div class="group">
+                <a href="rue-lynn.html">
+                    <img src="assets/img/0166-613x360.jpg" alt="Rue Lynn" class="rounded-lg">
+                </a>
+                <a href="rue-lynn.html">
+                    <p class="mt-2 text-center text-sm">Rue Lynn</p>
+                </a>
+            </div>
+             <div class="group">
+                <a href="argentinian.html">
+                    <img src="assets/img/6026-613x360.jpg" alt="Argentinian" class="rounded-lg">
+                </a>
+                <a href="argentinian.html">
+                    <p class="mt-2 text-center text-sm">Argentinian</p>
+                </a>
+            </div>
+             <div class="group">
+                <a href="willow-ryder.html">
+                    <img src="assets/img/7691-613x360.jpg" alt="Willow Ryder" class="rounded-lg">
+                </a>
+                <a href="willow-ryder.html">
+                    <p class="mt-2 text-center text-sm">Willow Ryder</p>
+                </a>
+            </div>
+             <div class="group">
+                <a href="daniela-amorazz.html">
+                    <img src="assets/img/amrzz-613x360.jpg" alt="Daniela & Amorazz" class="rounded-lg">
+                </a>
+                <a href="daniela-amorazz.html">
+                    <p class="mt-2 text-center text-sm">Daniela & Amorazz</p>
+                </a>
+            </div>
+             <div class="group">
+                <a href="julieta-yanez.html">
+                    <img src="assets/img/bxio-613x360.jpg" alt="Julieta Yanez" class="rounded-lg">
+                </a>
+                <a href="julieta-yanez.html">
+                    <p class="mt-2 text-center text-sm">Julieta Yanez</p>
+                </a>
+            </div>
+             <div class="group">
+                <a href="gabbyraves.html">
+                    <img src="assets/img/devd6-613x360.jpg" alt="gabbyraves" class="rounded-lg">
+                </a>
+                <a href="gabbyraves.html">
+                    <p class="mt-2 text-center text-sm">gabbyraves</p>
+                </a>
+            </div>
+             <div class="group">
+                <a href="rave
+                n-thick.html">
+                    <img src="assets/img/ni9q-613x360.jpg" alt="Raven Thick" class="rounded-lg">
+                </a>
+                <a href="raven-thick.html">
+                    <p class="mt-2 text-center text-sm">Raven Thick</p>
+                </a>
+            </div>
+             <div class="group">
+                <a href="yasmina-fran.html">
+                    <img src="assets/img/poqk-613x360.jpg" alt="Yasmina & Fran" class="rounded-lg">
+                </a>
+                <a href="yasmina-fran.html">
+                    <p class="mt-2 text-center text-sm">Yasmina & Fran</p>
+                </a>
+            </div>
+             <div class="group">
+                <a href="twerking-elle.html">
+                    <img src="assets/img/ptell-613x360.jpg" alt="Twerking Elle" class="rounded-lg">
+                </a>
+                <a href="twerking-elle.html">
+                    <p class="mt-2 text-center text-sm">Twerking Elle</p>
+                </a>
+            </div>
+             <div class="group">
+                <a href="halloween.html">
+                    <img src="assets/img/pugq-613x360.jpg" alt="Halloween" class="rounded-lg">
+                </a>
+                <a href="halloween.html">
+                    <p class="mt-2 text-center text-sm">Halloween</p>
+                </a>
+            </div>
+             <div class="group">
+                <a href="ryan-conner.html">
+                    <img src="assets/img/ryncbg-613x360.jpg" alt="Ryan Conner" class="rounded-lg">
+                </a>
+                <a href="ryan-conner.html">
+                    <p class="mt-2 text-center text-sm">Ryan Conner</p>
+                </a>
+            </div>
+             <div class="group">
+                <a href="honeybun-karma.html">
+                    <img src="assets/img/t4ok-613x360.jpg" alt="Honey Bun & Karma" class="rounded-lg">
+                </a>
+                <a href="honeybun-karma.html">
+                    <p class="mt-2 text-center text-sm">Honey Bun & Karma</p>
+                </a>
+            </div>
+             <div class="group">
+                <a href="candi-cakes.html">
+                    <img src="assets/img/wrzt-613x360.jpg" alt="Candi Cakes" class="rounded-lg">
+                </a>
+                <a href="candi-cakes.html">
+                    <p class="mt-2 text-center text-sm">Candi Cakes</p>
+                </a>
+            </div>
+             <div class="group">
+                <a href="miss-carter.html">
+                    <img src="assets/img/gtth5-613x360.jpg" alt="Miss Carter" class="rounded-lg">
+                </a>
+                <a href="miss-carter.html">
+                    <p class="mt-2 text-center text-sm">Miss Carter</p>
+                </a>
+            </div>
+             <div class="group">
+                <a href="muva-phoenix.html">
+                    <img src="assets/img/gog2-613x360.jpg" alt="Muva Phoenix" class="rounded-lg">
+                </a>
+                <a href="muva-phoenix.html">
+                    <p class="mt-2 text-center text-sm">Muva Phoenix</p>
+                </a>
+            </div>
+             <div class="group">
+                <a href="cassie-lenoir.html">
+                    <img src="assets/img/strb-613x360.jpg" alt="Cassie Lenoir" class="rounded-lg">
+                </a>
+                <a href="cassie-lenoir.html">
+                    <p class="mt-2 text-center text-sm">Cassie Lenoir</p>
+                </a>
+            </div>
+             <div class="group">
+                <a href="ester-muniz.html">
+                    <img src="assets/img/vid7-613x360.jpg" alt="Ester Muniz" class="rounded-lg">
+                </a>
+                <a href="ester-muniz.html">
+                    <p class="mt-2 text-center text-sm">Ester Muniz</p>
+                </a>
+            </div>
+             <div class="group">
+                <a href="ashley-alexander.html">
+                    <img src="assets/img/g4g0x-613x360.jpg" alt="Ashley Alexander" class="rounded-lg">
+                </a>
+                <a href="ashley-alexander.html">
+                    <p class="mt-2 text-center text-sm">Ashley Alexander</p>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Pagination -->
+    <div class="flex justify-center my-8">
+        <nav class="flex items-center space-x-2">
+            <a href="" class="px-4 py-2 bg-gray-700 rounded-md opacity-50 pointer-events-none">Prev</a>
+            <a href="#header" class="px-4 py-2 bg-purple-500 rounded-md">1</a>
+            <a href="page2.html" class="px-4 py-2 bg-gray-700 rounded-md hover:bg-purple-500">2</a>
+            <a href="page2.html" class="px-4 py-2 bg-gray-700 rounded-md hover:bg-purple-500">Next</a>
+        </nav>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 mt-8 p-4 text-center">
+        <p>&copy; 2025 QueensWrld. All rights reserved.</p>
+    </footer>
+
+    <script>
+    // Get the search input element
+    const searchInput = document.getElementById('query');
+
+    // Add an event listener for the 'keydown' event (when a user presses a key)
+    searchInput.addEventListener('keydown', function(event) {
+        // Check if the key pressed was the "Enter" key
+        if (event.key === 'Enter') {
+            // Prevent the default action (which would be to submit a form)
+            event.preventDefault();
+            
+            // Get the user's search query
+            const query = searchInput.value;
+            
+            // If the query is not empty, redirect the user.
+            // You can change the URL to your actual search results page.
+            // For example: window.location.href = '/search.html?q=' + query;
+            if (query) {
+                window.location.href = 'search-results.html'; 
+            }
+        }
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+            // 1. Find the container that holds all the items you want to shuffle.
+            const gridContainer = document.querySelector('.grid');
+
+            // 2. Get all the direct child elements with the class 'group'.
+            //    We convert the NodeList to an Array to use array methods.
+            const itemsToShuffle = Array.from(gridContainer.children).filter(el => el.classList.contains('group'));
+            
+            // 3. Shuffle the array using the Fisher-Yates shuffle algorithm.
+            for (let i = itemsToShuffle.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [itemsToShuffle[i], itemsToShuffle[j]] = [itemsToShuffle[j], itemsToShuffle[i]];
+            }
+
+            // 4. Clear the container.
+            gridContainer.innerHTML = '';
+            
+            // 5. Append the shuffled items back into the container.
+            itemsToShuffle.forEach(item => {
+                gridContainer.appendChild(item);
+            });
+        });
+</script>
+</body>
+</html>

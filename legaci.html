@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QueensWrld | Watching Legaci</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+    <style>
+        .search-group {
+          display: flex;
+          line-height: 28px;
+          align-items: center;
+          position: relative;
+          max-width: 190px;
+        }
+
+        .input {
+          font-family: "Montserrat", sans-serif;
+          width: 100%;
+          height: 45px;
+          padding-left: 2.5rem;
+          box-shadow: 0 0 0 1.5px #2b2c37, 0 0 25px -17px #000;
+          border: 0;
+          border-radius: 12px;
+          background-color: #16171d;
+          outline: none;
+          color: #bdbecb;
+          transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+          cursor: text;
+          z-index: 0;
+          font-size: 12px;
+        }
+
+        .input::placeholder {
+          color: #bdbecb;
+          font-size: 12px;
+        }
+
+        .input:hover {
+          box-shadow: 0 0 0 2.5px #2f303d, 0px 0px 25px -15px #000;
+        }
+
+        .input:active {
+          transform: scale(0.95);
+        }
+
+        .input:focus {
+          box-shadow: 0 0 0 2.5px #2f303d;
+        }
+
+        .search-icon {
+          position: absolute;
+          left: 1rem;
+          fill: #bdbecb;
+          width: 1rem;
+          height: 1rem;
+          pointer-events: none;
+          z-index: 1;
+        }
+    </style>
+
+    <script src="https://cdn.fluidplayer.com/v3/current/fluidplayer.min.js"></script>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <header id="header" class="bg-gray-800 p-4 flex justify-between items-center">
+        <div class="flex items-center">
+            <button class="mr-4">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+            <a href="index.html"><h1 class="text-2xl font-bold text-purple-400">QueensWrld</h1></a>
+        </div>
+        <div class="search-group">
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="search-icon">
+                <g><path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path></g>
+            </svg>
+            <input id="query" class="input" type="search" placeholder="Search..." name="searchbar"/>
+        </div>
+    </header>
+
+    <!-- Bottom Navigation Header (Copied from index.html) -->
+    <nav class="bg-gray-800 border-t border-b border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-center h-12">
+                <div class="flex items-baseline divide-x divide-gray-600">
+                    <a href="index.html" class="text-gray-300 hover:text-white px-5 py-2 text-sm font-medium">Live</a>
+                    <a href="#" class="text-gray-300 hover:text-white px-5 py-2 text-sm font-medium">Videos</a>
+                    <a href="#" class="text-gray-300 hover:text-white px-5 py-2 text-sm font-medium">Categories</a>
+                    <a href="#" class="text-gray-300 hover:text-white px-5 py-2 text-sm font-medium">Trending</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content Area -->
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Breadcrumbs -->
+    <nav class="flex py-4" aria-label="Breadcrumb">
+        <ol class="inline-flex items-center space-x-1 md:space-x-3">
+            <li class="inline-flex items-center">
+                <a href="index.html" class="inline-flex items-center text-sm font-medium text-gray-400 hover:text-white">
+                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
+                    Home
+                </a>
+            </li>
+            <li>
+                <div class="flex items-center">
+                    <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                    <a href="#" class="ml-1 text-sm font-medium text-gray-400 hover:text-white md:ml-2">Latest</a>
+                </div>
+            </li>
+            <li aria-current="page">
+                <div class="flex items-center">
+                    <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                    <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2">Legaci</span>
+                </div>
+            </li>
+        </ol>
+    </nav>
+
+    <!-- Responsive Video Player Container -->
+    <div class="relative w-full rounded-lg overflow-hidden" style="padding-bottom: 56.25%;">
+        <video id="video-player" class="absolute top-0 left-0 w-full h-full">
+            <source src="https://cdn.baddiehub.com/wk3jf.mp4" type="video/mp4" />
+        </video>
+    </div>
+
+    <div class="-mt-48">
+        <h1 class="text-4xl font-bold text-purple-300">
+            Legaci
+        </h1>
+        <div class="mt-4 flex items-center space-x-3">
+            <!-- Download Button -->
+            <a href="#" class="inline-flex items-center px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg shadow-md transition-colors duration-200">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                Download
+            </a>
+            <!-- Share Button -->
+            <a href="#" class="inline-flex items-center px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white font-semibold rounded-lg shadow-md transition-colors duration-200">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12s-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.368a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"></path></svg>
+                Share
+            </a>
+        </div>
+    </div>
+
+    <!-- You May Also Like Section -->
+        <div class="mt-12">
+            <!-- Section Title -->
+            <div class="flex items-center mb-6">
+                <h2 class="text-2xl font-bold text-purple-400 whitespace-nowrap pr-4">You May Also Like</h2>
+                <div class="w-full h-px bg-gray-700"></div>
+            </div>
+
+            <!-- Recommendations Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="group">
+                    <a href="wynter.html">
+                        <img src="assets/img/ekc2-613x360.jpg" alt="Wynter" class="rounded-lg">
+                    </a>
+                    <div class="mt-2">
+                        <a href="wynter.html">
+                            <p class="font-semibold text-white truncate">Wynter</p>
+                        </a>
+                        <div class="flex items-center text-sm text-gray-400 mt-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                            <span class="ml-1.5">221K views</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="group">
+                    <a href="mz-dani.html">
+                        <img src="assets/img/emdi-613x360.jpg" alt="Mz Dani" class="rounded-lg">
+                    </a>
+                    <div class="mt-2">
+                        <a href="mz-dani.html">
+                            <p class="font-semibold text-white truncate">Mz Dani</p>
+                        </a>
+                        <div class="flex items-center text-sm text-gray-400 mt-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                            <span class="ml-1.5">375K views</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group">
+                    <a href="emma-lee-baker.html">
+                        <img src="assets/img/emm20-613x360.jpg" alt="Emma Lee Baker" class="rounded-lg">
+                    </a>
+                    <div class="mt-2">
+                        <a href="emma-lee-baker.html">
+                            <p class="font-semibold text-white truncate">Emma Lee Baker</p>
+                        </a>
+                        <div class="flex items-center text-sm text-gray-400 mt-1">
+                           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                            <span class="ml-1.5">425K views</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group">
+                    <a href="ava-nicks.html">
+                        <img src="assets/img/avnc-613x360.jpg" alt="Ava Nicks" class="rounded-lg">
+                    </a>
+                    <div class="mt-2">
+                        <a href="ava-nicks.html">
+                            <p class="font-semibold text-white truncate">Ava Nicks</p>
+                        </a>
+                        <div class="flex items-center text-sm text-gray-400 mt-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                            <span class="ml-1.5">1.1M views</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+</main>
+
+    <!-- Footer (Copied from index.html) -->
+    <footer class="bg-gray-800 mt-8 p-4 text-center">
+        <p>&copy; 2025 QueensWrld. All rights reserved.</p>
+    </footer>
+
+    <!-- Search Bar Script (Copied from index.html) -->
+    <script>
+        const searchInput = document.getElementById('query');
+        searchInput.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                const query = searchInput.value;
+                if (query) {
+                    window.location.href = 'search-results.html'; 
+                }
+            }
+        });
+    </script>
+    
+    <!-- Fluid Player Initialization Script -->
+    <script>
+        var myFP = fluidPlayer(
+            'video-player', {
+            "layoutControls": {
+                "controlBar": {
+                    "autoHideTimeout": 3,
+                    "animated": true,
+                    "autoHide": true
+                },
+                "htmlOnPauseBlock": { "html": null, "height": null, "width": null },
+                "autoPlay": false, // Changed to false for better user experience
+                "mute": false,
+                "allowTheatre": true, // Enabled for better viewing
+                "playPauseAnimation": true,
+                "playbackRateEnabled": true,
+                "allowDownload": false, // Controlled by our custom button
+                "playButtonShowing": true,
+                "fillToContainer": true, // Ensures player fills the container
+                // IMPORTANT: Replace with your video's thumbnail image
+                "posterImage": "https://via.placeholder.com/1280x720.png/A78BFA/FFFFFF?text=Video+Poster"
+            },
+            "vastOptions": {
+                "adList": [],
+                "adCTAText": false,
+                "adCTATextPosition": ""
+            }
+        });
+    </script>
+
+</body>
+</html>
